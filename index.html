@@ -1,0 +1,32 @@
+<!--index.html-->
+<!--the main HTML file for the etch-a-sketch board-->
+<!--Made with <3 by Shrey Ravi-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="favicon.ico" />
+        <script src="etchasketch.js"></script>
+        <title>JS Etch-A-Sketch - Shrey Ravi</title>
+    </head>
+    <body onload="startup()">
+        <div class="app">
+            <div class="heading"><h1>Shrey's Etch-A-Sketch</h1></div>
+            <div class="controls">
+                <button onclick="resize()" type="button">Resize Board</button>
+                <button onclick="clearScreen()" type="button">Clear Board</button>
+                <label for="color-select">Color: </label>
+                <select onchange="colorChange()" id="color-select">
+                    <option value="black">Black</option>
+                    <option value="gradient">Gradient</option>
+                    <option value="random">Random</option>
+                </select>
+            </div>
+            <div class="board" id="board"></div>
+            <div class="footer">
+                <footer>Made with &hearts; by Shrey Ravi, 2020. <a href="https://github.com/ShreyRavi/etch-a-sketch-js">See GitHub</a></footer>
+            </div>
+        </div>
+    </body>
+</html>
