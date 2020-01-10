@@ -11,9 +11,9 @@ let isMouseDown = false;
 
 //helper method to draw a blank grid, takes in screenWidth and dimensions
 function draw(dim, wid) {
-    console.log("draw called with " + dim.toString() + " dimensions and " + wid.toString() + " screen width.");
+    //console.log("draw called with " + dim.toString() + " dimensions and " + wid.toString() + " screen width.");
     let widthOfSquares = Math.floor(wid / dim);
-    console.log("width of squares are " + widthOfSquares.toString());
+    //console.log("width of squares are " + widthOfSquares.toString());
     document.getElementById("heading").innerHTML = "Shrey's Etch-A-Sketch ("+ dim.toString() + "x" + dim.toString() + ")";
     document.getElementById("board").style.gridTemplateColumns = 'repeat(${dim}, 1fr)';
     document.getElementById("board").style.gridTemplateRows = 'repeat(${dim}, 1fr)';
@@ -62,7 +62,7 @@ function getRandColor(possibleChars) {
 
 //function to color each div when clicked
 function colorTile(tileToColor) {
-    console.log("coloring happening with tile " + tileToColor.toString());
+    //console.log("coloring happening with tile " + tileToColor.toString());
     if (!isMouseDown){
         return;
     }
@@ -79,7 +79,7 @@ function colorTile(tileToColor) {
 
 //called when the etch-a-sketch is first loaded
 function startup() {
-    console.log("startup called");
+    //console.log("startup called");
     document.body.addEventListener("mousedown", function() {isMouseDown = true;}, false);
     document.body.addEventListener("mouseup", function() {isMouseDown = false;}, false);
     document.getElementById("board").innerHTML = "";
@@ -88,7 +88,7 @@ function startup() {
 
 //called when the resize button is clicked
 function resize() {
-    console.log("resize called");
+    //console.log("resize called");
     let newDim = prompt("Please enter the new dimensions (X by X grid, max 352): ");
     if (parseInt(newDim) > 352) {
         alert("Sorry, maximum dimensions are 352!");
@@ -107,7 +107,7 @@ function resize() {
 
 //called when the clear button is clicked
 function clearScreen() {
-    console.log("clear called");
+    //console.log("clear called");
     document.getElementById("board").innerHTML = "";
     draw(dimensions, screenWidth);
 }
@@ -115,14 +115,14 @@ function clearScreen() {
 //called when the color select is manipulated
 function colorChange() {
     const currColor = document.getElementById("color-select").value;
-    console.log("color change called with " + currColor);
+    //console.log("color change called with " + currColor);
     color = currColor;
 }
 
 //called when the grid lines checkbox is changed
 function gridLinesChange() {
     gridLinesChecked = document.getElementById("grid-lines-checkbox").checked;
-    console.log("grid lines changed checkbox changed to: " + gridLinesChecked);
+    //console.log("grid lines changed checkbox changed to: " + gridLinesChecked);
     document.getElementById("board").innerHTML = "";
     draw(dimensions, screenWidth);
 }
