@@ -12,20 +12,28 @@
     </head>
     <body onload="startup()">
         <div class="app">
-            <div class="heading"><h1>Shrey's Etch-A-Sketch</h1></div>
+            <div class="heading"><h1 id="heading">Shrey's Etch-A-Sketch</h1></div>
             <div class="controls">
                 <button onclick="resize()" type="button">Resize Board</button>
-                <button onclick="clearScreen()" type="button">Clear Board</button>
+                <button onclick="clearScreen()" type="button">Clear Board</button> <br />
                 <label for="color-select">Color: </label>
                 <select onchange="colorChange()" id="color-select">
                     <option value="black">Black</option>
-                    <option value="gradient">Gradient</option>
-                    <option value="random">Random</option>
+                    <option value="gradient">Gradient (not working)</option>
+                    <option value="random">Random (not working)</option>
                 </select>
+                <label for="grid-lines-checkbox">Grid Lines Enabled?</label>
+                <input type="checkbox" onchange="gridLinesChange()" id="grid-lines-checkbox" value="GridLines" checked></input>
             </div>
             <div class="board" id="board"></div>
             <div class="footer">
-                <footer>Made with &hearts; by Shrey Ravi, 2020. <a href="https://github.com/ShreyRavi/etch-a-sketch-js">See GitHub</a></footer>
+                <footer>
+                    <small>
+                        Instructions: Click and drag to draw on canvas. Enjoy!
+                        <br />
+                        Made with &hearts; by Shrey Ravi, 2020. <a href="https://github.com/ShreyRavi/etch-a-sketch-js">See GitHub</a>
+                    </small>
+                </footer>
             </div>
         </div>
     </body>
