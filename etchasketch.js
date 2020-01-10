@@ -69,9 +69,6 @@ function colorTile(tileToColor) {
     if (color === "black") {
         tileToColor.style.background = "black";
     }
-    else if (color === "gradient") {
-
-    }
     else if (color === "random") {
         tileToColor.style.background = getRandColor("0123456789ABCDEF");
     }
