@@ -50,6 +50,16 @@ function draw(dim, wid) {
     }
 }
 
+//helper function to generate a random color
+function getRandColor(possibleChars) {
+    let color = "#";
+    var iter;
+    for (iter = 0; iter < 6; iter++) {
+        color += possibleChars[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 //function to color each div when clicked
 function colorTile(tileToColor) {
     console.log("coloring happening with tile " + tileToColor.toString());
@@ -63,7 +73,7 @@ function colorTile(tileToColor) {
 
     }
     else if (color === "random") {
-
+        tileToColor.style.background = getRandColor("0123456789ABCDEF");
     }
     else {
         console.log("error: incorrect color setting");
